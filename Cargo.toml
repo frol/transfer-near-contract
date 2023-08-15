@@ -1,0 +1,21 @@
+[package]
+name = "transfer-near-contract"
+version = "0.1.0"
+edition = "2021"
+authors = ["Vlad Frolov <frolvlad@gmail.com>"]
+license = "MIT OR Apache-2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+nesdie = { version = "0.2", default-features = false }
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = false
