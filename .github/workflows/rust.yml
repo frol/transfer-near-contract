@@ -23,4 +23,4 @@ jobs:
     - name: Linting
       run: cargo clippy --target wasm32-unknown-unknown
     - name: Build
-      run: sh build.rs
+      run: sh build.sh
